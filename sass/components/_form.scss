@@ -32,7 +32,10 @@
 
 
      }
-
+   
+    &__radio-input {
+        display:none;
+    }
    
 
     &__label {
@@ -70,12 +73,28 @@
         display:block;
         position: absolute;
         left: 0;
-        top: -.1rem;
+        top: -.4rem;
 
 
         &::after {
+            width: 2.3rem;
+            content: '';
+            display: block;
+            border-radius: 50%;
+            height: 2.3rem;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%);
+            background-color: $color-primary;
+            opacity:0;
+            transition: opacity .2s;
+          }
         
-        }
+    }
+
+    &__radio-input:checked ~ &___radio-label &___radio-button::after{
+          opacity: 1;
     }
 }
 
